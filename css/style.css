@@ -1,16 +1,29 @@
-footer {
-	border-top: 1px solid gray;
-	margin-top: 20px;
-}
-
-table.projects {
-	width: 100%;
-}
-
+/**************************
+	All Projects Page
+***************************/
+table.projects { width: 100%; }
 table th { text-align: left; }
-
 blockquote:hover {
 	color: #999999;	
 	cursor: pointer;
 	border-color: white;
+}
+
+
+/**************************
+	Project Details Page
+***************************/
+textarea.create_details, input[type=text].details {
+	display: block;
+	width: 100%;
+}
+
+
+
+/*************************
+	Footer
+***************************/
+footer {
+	border-top: 1px solid gray;
+	margin-top: 20px;
 }
