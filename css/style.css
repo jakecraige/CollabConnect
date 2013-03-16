@@ -1,0 +1,16 @@
+footer {
+	border-top: 1px solid gray;
+	margin-top: 20px;
+}
+
+table.projects {
+	width: 100%;
+}
+
+table th { text-align: left; }
+
+blockquote:hover {
+	color: #999999;	
+	cursor: pointer;
+	border-color: white;
+}

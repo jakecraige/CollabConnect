@@ -1,0 +1,376 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pc_man",
+				"pc_manufacture"
+			],
+			[
+				"Manuface",
+				"Manufacturer"
+			],
+			[
+				"btn",
+				"btn-success"
+			],
+			[
+				"bt",
+				"btn-primary"
+			],
+			[
+				"resolution_ty",
+				"resolution_types"
+			],
+			[
+				"system",
+				"system_config"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/views/projects.php",
+			"settings":
+			{
+				"buffer_size": 8,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/projects.php",
+			"settings":
+			{
+				"buffer_size": 318,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"snippet: CI",
+				"Snippet: CI - Load View"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: ENV['…']"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"fet",
+				"Fetch: Manage"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/wamp/www/collabconnect/application/views/templates/header.php",
+		"/C/wamp/www/collabconnect/application/views/header.php",
+		"/C/wamp/www/collabconnect/application/config/routes.php",
+		"/C/wamp/www/collabconnect/application/config/config.php",
+		"/C/wamp/www/collabconnect/application/views/templates/footer.php",
+		"/C/wamp/www/collabconnect/css/style.css",
+		"/C/wamp/www/collabconnect/application/views/templates/default.php",
+		"/C/wamp/www/ci/application/.htaccess",
+		"/C/wamp/www/ci/application/config/routes.php",
+		"/C/wamp/www/ci/application/models/math.php",
+		"/C/wamp/www/ci/application/controllers/sites.php",
+		"/C/wamp/www/ci/application/config/config.php",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 2/Packages/User/SFTP.sublime-settings",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/includes/determine_issue.php",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/includes/css/style.css",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/signin.php",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/includes/header.php",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/signout.php",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/sites.php",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/rules.php",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 2/Packages/User/PHP.sublime-settings",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/index.php",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/sftp-config.json",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 2/Packages/SFTP/SFTP.sublime-settings",
+		"/C/Users/Owner/Dropbox/Work/websites/pwm-bootstrap/todo.txt",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 2/Packages/User/SFTP.errors.log",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/includes/css/style.css",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/detail.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/includes/close_issue.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/includes/functions.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/history.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/includes/drawamcs.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/includes/footer.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/sites.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/signin.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/includes/header.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/admin.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/includes/determine_issue.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/includes/invalid_price.php",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/sftp-config.json",
+		"/C/Users/jakec/Dropbox/Work/websites/pwm-bootstrap/todo.txt",
+		"/C/Users/jakec/AppData/Roaming/Sublime Text 2/Packages/User/sftp_servers/pwm-bootstrap",
+		"/C/users/jakec/appdata/local/temp/sublime-sftp-browse-1363096456/pwm-bootstrap/public_html/jakecraige.com/projects/pwm-bootstrap/index.php",
+		"/C/Users/jakec/AppData/Roaming/Sublime Text 2/Packages/User/Fetch.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"change",
+			"resolution_type",
+			"By System",
+			"Closed",
+			"mode=close",
+			"close",
+			"delete",
+			"4"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/views/projects.php",
+					"settings":
+					{
+						"buffer_size": 8,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								8
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/controllers/projects.php",
+					"settings":
+					{
+						"buffer_size": 318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								225,
+								225
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 41.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"dete",
+				"includes/determine_issue.php"
+			],
+			[
+				"deta",
+				"detail.php"
+			],
+			[
+				"site",
+				"sites.php"
+			],
+			[
+				"head",
+				"includes/header.php"
+			],
+			[
+				"sign",
+				"signin.php"
+			],
+			[
+				"sty",
+				"includes/css/style.css"
+			],
+			[
+				"rule",
+				"rules.php"
+			],
+			[
+				"todo",
+				"todo.txt"
+			],
+			[
+				"style",
+				"includes/css/style.css"
+			],
+			[
+				"foot",
+				"includes/footer.php"
+			],
+			[
+				"hist",
+				"history.php"
+			],
+			[
+				"draw",
+				"includes/drawamcs.php"
+			],
+			[
+				"funct",
+				"includes/functions.php"
+			],
+			[
+				"close",
+				"includes/close_issue.php"
+			],
+			[
+				"heade",
+				"includes/header.php"
+			],
+			[
+				"detail",
+				"detail.php"
+			],
+			[
+				"inval",
+				"includes/invalid_price.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 177.0,
+	"status_bar_visible": true
+}
