@@ -78,24 +78,29 @@ class Project extends CI_Model {
 			}
 		}
 		return FALSE;
-		/*$this->db->select('*');
-		$this->db->from('projects_members');
-		$this->db->where('project_id', $project_id);
-		$this->db->join('users', "5 = projects.id");*/
-		/*$query = $this->db->get();
-		if($query->num_rows() > 0)
+	}
+	public function get_members($project_id)
+	{
+		$query = $this->db->query("SELECT *
+					FROM users, project_members
+					WHERE users.id = project_members.user_id");
+		$users = array();
+		foreach($query->result() as $row)
 		{
-			return TRUE;
+			if($row->project_id == $project_id)
+			{
+				$user = $this->user->get_username($row->user_id);
+				$users[] = $user;
+			}
+		}
+		if(!empty($users))
+		{
+			return $users;
 		}
 		else
 		{
 			return FALSE;
-		}*/
-
-	}
-	public function get_project_members($project_id)
-	{
-
+		}
 	}
 }
 

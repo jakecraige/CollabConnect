@@ -21,14 +21,16 @@
 			</code>
 		</div> <!-- end main content span9 -->
 		<div class="span3 sidebar">
-			<?php if($project['created_by'] == $this->session->userdata('username')): ?>
-				<button class="btn btn-danger">Mark Completed</button>
-				<button class="btn btn-primary">Edit</button>
-			<?php else: ?>
-				<?php if($this->project->is_member($project['id'])): ?>
-					<a class="btn btn-danger" href="<?php echo base_url().'projects/leave/'.$project['id']; ?>">Leave Project</a>
+			<?php if($this->user->logged_in()): ?>
+				<?php if($project['created_by'] == $this->session->userdata('username')): ?>
+					<button class="btn btn-danger">Mark Completed</button>
+					<button class="btn btn-primary">Edit</button>
 				<?php else: ?>
-					<a class="btn btn-success" href="<?php echo base_url().'projects/join/'.$project['id']; ?>">Join Project</a>
+					<?php if($this->project->is_member($project['id'])): ?>
+						<a class="btn btn-danger" href="<?php echo base_url().'projects/leave/'.$project['id']; ?>">Leave Project</a>
+					<?php else: ?>
+						<a class="btn btn-success" href="<?php echo base_url().'projects/join/'.$project['id']; ?>">Join Project</a>
+					<?php endif; ?>
 				<?php endif; ?>
 			<?php endif; ?>
 			<h4>Skills Needed</h4>
@@ -49,11 +51,13 @@
 				}
 			?>
 			<h4>Team Members</h4>
+			<p>
+				<?php $members = $this->project->get_members($project['id']); ?>
+			</p>
 			<ol>
-				<li><a href="#">jCraige</a></li>
-				<li><a href="#">bob.lundsford</a></li>
-				<li><a href="#">wannabeCoder</a></li>
-				<li><a href="#">forksANDknives</a></li>
+				<?php foreach($members as $key=>$member): ?>
+					<li><a href="<?= base_url().'profiles/'.$member ?>"><?= $member ?></a></li>
+				<?php endforeach; ?>
 			</ol>
 		</div> <!-- end sidebar span3 -->
 	</div> <!-- end row -->

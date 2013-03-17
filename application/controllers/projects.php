@@ -42,6 +42,8 @@ class Projects extends CI_Controller {
 			else
 			{
 				$data['id'] = $this->project->create();
+				$project_id = $this->db->insert_id();
+				$this->project->join($project_id);
 				$data['title'] = 'Success! - CollabConnect';
 				$data['errors'] = '';
 				$data['content'] = 'projects/created_success';

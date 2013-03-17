@@ -25,6 +25,16 @@ class User extends CI_Model {
 			return FALSE;
 		}
 	}
+	public function get_username($user_id)
+	{
+		$this->db->where('id', $user_id);
+		$query = $this->db->get('users');
+		foreach($query->result() as $row)
+		{
+			return $row->username;
+		}
+		return FALSE;
+	}
 	public function get_all()
 	{
 		$query = $this->db->get('users');

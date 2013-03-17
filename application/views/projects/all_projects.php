@@ -31,7 +31,7 @@
 					echo '</blockquote>';
 				}
 			?>
-			<div class="pagination">
+			<!-- <div class="pagination">
 			  <ul>
 			    <li class="disabled"><a href="#">&laquo;</a></li>
 			    <li class="active"><a href="#">1</a></li>
@@ -39,7 +39,7 @@
 			    <li><a href="#">3</a></li>
 			    <li><a href="#">&raquo;</a></li>
 			  </ul>
-			</div>
+			</div> -->
 		</div><!-- end span8 -->
 		<!-- <div class="span3 sidebar">
 			<div class="well">

@@ -24,6 +24,5 @@ textarea.create_details, input[type=text].details {
 	Footer
 ***************************/
 footer {
-	border-top: 1px solid gray;
 	margin-top: 20px;
 }
