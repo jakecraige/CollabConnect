@@ -45,6 +45,58 @@ class Project extends CI_Model {
 		$query = $this->db->get('projects');
 		return $query->result_array();
 	}
+	public function join($project_id)
+	{
+		$user = $this->user->get_info($this->session->userdata('username'));
+		$data = array(
+			'user_id' => $user[0]['id'],
+			'project_id' => $project_id
+		);
+		$this->db->insert('project_members', $data);
+	}
+	public function leave($project_id)
+	{
+		$user = $this->user->get_info($this->session->userdata('username'));
+
+		$this->db->where('user_id', $user[0]['id']);
+		$this->db->where('project_id', $project_id);
+		$this->db->delete('project_members');
+	}
+	public function is_member($project_id)
+	{
+		$user = $this->user->get_info($this->session->userdata('username'));
+		$user_id = $user[0]['id'];
+		$query = $this->db->query("SELECT *
+					FROM users, project_members
+					WHERE users.id = project_members.user_id");
+		foreach($query->result() as $row)
+		{
+			if($row->user_id == $user_id
+					&& $row->project_id == $project_id)
+			{
+				return TRUE;
+			}
+		}
+		return FALSE;
+		/*$this->db->select('*');
+		$this->db->from('projects_members');
+		$this->db->where('project_id', $project_id);
+		$this->db->join('users', "5 = projects.id");*/
+		/*$query = $this->db->get();
+		if($query->num_rows() > 0)
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}*/
+
+	}
+	public function get_project_members($project_id)
+	{
+
+	}
 }
 
 /* End of file project.php */

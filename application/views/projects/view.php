@@ -25,7 +25,11 @@
 				<button class="btn btn-danger">Mark Completed</button>
 				<button class="btn btn-primary">Edit</button>
 			<?php else: ?>
-				<button class="btn btn-success">Join Project</button>
+				<?php if($this->project->is_member($project['id'])): ?>
+					<a class="btn btn-danger" href="<?php echo base_url().'projects/leave/'.$project['id']; ?>">Leave Project</a>
+				<?php else: ?>
+					<a class="btn btn-success" href="<?php echo base_url().'projects/join/'.$project['id']; ?>">Join Project</a>
+				<?php endif; ?>
 			<?php endif; ?>
 			<h4>Skills Needed</h4>
 			<?php

@@ -65,6 +65,20 @@ class Projects extends CI_Controller {
 		$data['content'] = 'projects/view';
 		$this->load->view('templates/default', $data);
 	}
+	public function join($project_id)
+	{
+		$this->load->model('project');
+		$this->project->join($project_id);
+		// $this->session->set_flashdata('join_project', 'You have joined this project');
+		redirect("projects/view/$project_id");
+	}
+	public function leave($project_id)
+	{
+		$this->load->model('project');
+		$this->project->leave($project_id);
+		// $this->session->set_flashdata('join_project', 'Left project successfully');
+		redirect("projects/view/$project_id");
+	}
 }
 
 /* End of file projects.php */
