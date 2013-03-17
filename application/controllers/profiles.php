@@ -2,9 +2,17 @@
 
 class Profiles extends CI_Controller {
 
-	public function index()
+	public function view($username)
 	{
-		
+		$data['user'] = $this->user->get_info($username);
+		if($data['user'] == FALSE)
+		{
+			$data['errors'] = 'User does not exist.';
+		}
+				
+		$data['title'] = 'Profile - CollabConnect';
+		$data['content'] = 'profiles/view';
+		$this->load->view('templates/default', $data);
 	}
 
 }

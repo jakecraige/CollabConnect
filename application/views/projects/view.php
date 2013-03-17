@@ -21,8 +21,12 @@
 			</code>
 		</div> <!-- end main content span9 -->
 		<div class="span3 sidebar">
-			<button class="btn btn-danger">Mark Completed</button>
-			<button class="btn btn-primary">Edit</button>
+			<?php if($project['created_by'] == $this->session->userdata('username')): ?>
+				<button class="btn btn-danger">Mark Completed</button>
+				<button class="btn btn-primary">Edit</button>
+			<?php else: ?>
+				<button class="btn btn-success">Join Project</button>
+			<?php endif; ?>
 			<h4>Skills Needed</h4>
 			<?php
 				if(!empty($project['skills']))

@@ -12,11 +12,18 @@ class User extends CI_Model {
 		$this->db->insert('users', $data);
 		return $this->db->insert_id();
 	}
-	public function get_info($user_id)
+	public function get_info($username)
 	{
-		$this->db->where('id', $user_id);
+		$this->db->where('username', $username);
 		$query = $this->db->get('users');
-		return $query->result_array();
+		if($query->num_rows() > 0)
+		{
+			return $query->result_array();
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
 	public function get_all()
 	{

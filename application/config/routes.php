@@ -38,8 +38,11 @@
 |
 */
 
-$route['default_controller'] = "projects";
+$route['default_controller'] = 'projects';
 $route['404_override'] = '';
+
+$route['profiles/(:any)'] = 'profiles/view/$1';
+$route['profiles'] = 'projects';
 
 // BEGIN AUTHENTICATION LIBRARY ROUTES
 $route['login'] = "users/login";
