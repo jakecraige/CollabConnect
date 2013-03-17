@@ -40,6 +40,7 @@ class Project extends CI_Model {
 	public function get_all()
 	{
 		$this->db->where('status <>', 'Closed');
+		$this->db->order_by('created_at', 'desc');
 		$query = $this->db->get('projects');
 		return $query->result_array();
 	}

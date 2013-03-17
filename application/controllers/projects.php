@@ -5,6 +5,8 @@ class Projects extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('project');
+		$this->load->helper('date');
+
 		$data['projects'] = $this->project->get_all();
 		$data['title'] = 'Projects - CollabConnect';
 		$data['content'] = 'projects/all_projects';
