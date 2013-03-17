@@ -11,6 +11,22 @@
 	</div> <!-- hero-unit end -->
 	<div class="row">
 		<div class="span12">
+			<?php
+				/*print_r($projects);
+				echo '<br><br>';*/
+				foreach($projects as $project)
+				{
+					// print_r($project);
+					echo '<blockquote class="project well well-small" 
+							onclick="document.location=\''.base_url().'index.php/projects/view/'.$project['id'].'\'">';
+					echo '<p>'.$project['summary'].'</p>';
+					echo '<small>';
+						echo $project['created_at'].' by ';
+						echo '<a href="'.base_url().'index.php/profiles/'.$project['created_by'].'">'.$project['created_by'].'</a>';
+					echo '</small>';
+					echo '</blockquote>';
+				}
+			?>
 			<blockquote class="project well well-small" onclick="document.location='http://www.google.com'">
 				<p>
 					Collaboration portal where users can go and find other developers

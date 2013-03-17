@@ -21,7 +21,7 @@ class Migration_Add_projects_table extends CI_Migration {
 	          'type' => 'TEXT',
 	          'null' => FALSE,
 	        ),
-	        'respository' => array(
+	        'repository' => array(
 	          'type' => 'VARCHAR',
 	          'constraint' => '100',
 	          'null' => TRUE,
@@ -29,6 +29,11 @@ class Migration_Add_projects_table extends CI_Migration {
 	        'skills' => array(
 	          'type' => 'VARCHAR',
 	          'constraint' => '255',
+	          'null' => TRUE,
+	        ),
+	        'status' => array(
+	          'type' => 'VARCHAR',
+	          'constraint' => '20',
 	          'null' => TRUE,
 	        ),
 	        'created_by' => array(

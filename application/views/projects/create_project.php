@@ -1,33 +1,41 @@
 <div class="container">
 	<div class="row">
 		<div class="span7">
-			<?php echo form_open(); ?>
+			<?php
+				if(!empty($errors)) { //Echo out errors if any
+					echo "<p class=\"alert alert-error\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>$errors</p>";
+				}
+				echo validation_errors('<p class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>');
+			?>
+			<?php 
+				echo form_open(base_url().'index.php/projects/create'); 
+			?>
 				<fieldset>
 					<legend>Create a Project</legend>
 					<label>Summary</label>
-						<input type="text" class="details" placeholder="Brief summary to display to users">
+						<input type="text" class="details" name="summary" placeholder="Brief summary to display to users" value="<?php echo set_value('summary'); ?>">
 					<label>Details</label>
-						<textarea class="create_details" rows="7">Inform the users on any specific details or requirements neccesary to complete the project.</textarea>
+						<textarea class="create_details" name="details" placeholder="Let the users know more details about the project here." rows="7"><?php echo set_value('details'); ?></textarea>
 					<label>Repository Link</label>
-					<input type="text" class="details" placeholder="http://github.com/username/RepoName">
+					<input type="text" class="details" name="repository" placeholder="http://github.com/username/RepoName" value="<?php echo set_value('repository'); ?>">
 					<label>Skills Used</label>
 						<label class="checkbox inline">
-						  	<input type="checkbox" id="lang[]" value="PHP"> PHP
+						  	<input type="checkbox" name="skills[]" value="PHP"> PHP
 						</label>
 						<label class="checkbox inline">
-						 	 <input type="checkbox" id="lang[]" value="MySQL"> MySQL
+						 	 <input type="checkbox" name="skills[]" value="MySQL"> MySQL
 						</label>
 						<label class="checkbox inline">
-						 	 <input type="checkbox" id="lang[]" value="Ruby"> Ruby/Rails
+						 	 <input type="checkbox" name="skills[]" value="Ruby/Rails"> Ruby/Rails
 						</label>
 						<label class="checkbox inline">
-						 	 <input type="checkbox" id="lang[]" value="Javascript"> Javascript
+						 	 <input type="checkbox" name="skills[]" value="Javascript"> Javascript
 						</label>
 						<label class="checkbox inline">
-						 	 <input type="checkbox" id="lang[]" value="jQuery"> jQuery
+						 	 <input type="checkbox" name="skills[]" value="jQuery"> jQuery
 						</label>
 					<br><br>
-					<input type="submit" class="btn btn-success">
+					<input type="submit" name="submit" class="btn btn-success">
 
 				</fieldset>
 			<?php echo form_close(); ?>
