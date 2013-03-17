@@ -18,7 +18,39 @@ textarea.create_details, input[type=text].details {
 	width: 100%;
 }
 
-
+/**************************
+	Comments
+***************************/
+div.comments {
+	margin-top: 15px;
+}
+textarea.post_comment {
+	width: 100%;
+	height: 95px;
+}
+div.comments figure {
+	padding: 0;
+	margin: 0;
+}
+div.comment div.well, div.comment div.well-small {
+	padding: 0;
+	margin: 0;
+}
+div.comment div.span1 {
+	margin-left: 10px;
+}
+div.comment div.span8 {
+	margin-left: 0;
+}
+div.comments input[type=submit] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+div.comments blockquote {
+	padding: 0; margin: 0;
+}
 
 /*************************
 	Footer

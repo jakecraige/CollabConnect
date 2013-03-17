@@ -25,6 +25,16 @@ class User extends CI_Model {
 			return FALSE;
 		}
 	}
+	public function get_id($username)
+	{
+		$this->db->where('username', $username);
+		$query = $this->db->get('users');
+		foreach($query->result() as $row)
+		{
+			return $row->id;
+		}
+		return FALSE;
+	}
 	public function get_username($user_id)
 	{
 		$this->db->where('id', $user_id);
@@ -32,6 +42,26 @@ class User extends CI_Model {
 		foreach($query->result() as $row)
 		{
 			return $row->username;
+		}
+		return FALSE;
+	}
+	public function get_email_address($username)
+	{
+		$this->db->where('username', $username);
+		$query = $this->db->get('users');
+		foreach($query->result() as $row)
+		{
+			return $row->email_address;
+		}
+		return FALSE;
+	}
+	public function get_email_address_from_id($user_id)
+	{
+		$this->db->where('id', $user_id);
+		$query = $this->db->get('users');
+		foreach($query->result() as $row)
+		{
+			return $row->email_address;
 		}
 		return FALSE;
 	}

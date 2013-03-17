@@ -9,7 +9,7 @@
 		</div>
 		<div class="span3">
 			<div class="well well-small">
-				<img src="http://gravatar.com/avatar/<?php echo md5($user['email_address']); ?>" alt="Profile Picture">
+				<img src="<?php echo gravatar_image($user['email_address']); ?>" alt="Profile Picture">
 			</div>
 			<div class="well well-small">
 				<h4>Contact</h4>

@@ -1,5 +1,6 @@
 <div class="container">
 	<?php $project = $project[0]; ?>
+	<?php //$comments = $comments[0]; ?>
 	<div class="row">
 		<div class="span9">
 			<div class="well">
@@ -19,7 +20,56 @@
 			<code>
 				<a href="<?php echo $project['repository']; ?>"><?php echo $project['repository']; ?></a>
 			</code>
+			<div class="comments">
+				<h3>Comments</h3>
+				<div class="row">
+					<?php if($this->user->logged_in()): ?>
+						<?= form_open(base_url().'projects/comment/'.$project['id']); ?>
+							<div class="span8">
+								<textarea class="post_comment" name="comment"></textarea>
+							</div>
+							<div class="span1">
+								<figure>
+									<a href="<?= base_url().'/profiles/'.$username ?>">
+										<img src="<?php echo gravatar_image($user_email_address); ?>" alt="Profile Image">
+									</a>
+								</figure>
+								<input type="submit" name="submit" class="btn btn-success" value="Post">
+							</div><!-- end span1 sidebar -->
+						<?= form_close(); ?>
+					<?php endif; ?>
+					<?php foreach($comments as $comment): ?>
+						<?php 
+							$comment_email = $this->user->get_email_address_from_id($comment['user_id']); 
+							$comment_username = $this->user->get_username($comment['user_id']);
+						?>
+						<div class="span9 comment well well-small">
+							<blockquote>
+							<div class="span8 row">
+								<p><?= nl2br($comment['comment']) ?></p>
+								<small>
+									<?php
+										echo time_ago_in_words($comment['created_at']).' by ';
+										echo '<a href="'.base_url().'profiles/'.$comment_username.'">'.$comment_username.'</a>';
+									?>
+								</small>
+							</div>
+							<div class="span1 row">
+								<figure>
+									<a href="<?= base_url().'/profiles/'.$comment_username ?>">
+										<img src="<?php echo gravatar_image($comment_email); ?>" alt="Profile Image">
+									</a>
+								</figure>
+							</div>
+						</blockquote>
+						</div>
+					<?php endforeach; ?>
+				</div> <!-- end row -->
+			</div> <!-- end comments div -->
 		</div> <!-- end main content span9 -->
+
+
+		<!-- SIDEBAR BEGIN -->
 		<div class="span3 sidebar">
 			<?php if($this->user->logged_in()): ?>
 				<?php if($project['created_by'] == $this->session->userdata('username')): ?>
