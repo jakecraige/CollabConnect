@@ -9,7 +9,6 @@ class Users extends CI_Controller {
 	public function login()
 	{
 		$this->load->library('form_validation');
-		$this->load->model('user');
 
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
@@ -40,7 +39,6 @@ class Users extends CI_Controller {
 	{
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-		$this->load->model('user');
 
 		//Form validation rules
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[20]|is_unique[users.username]');
@@ -66,7 +64,8 @@ class Users extends CI_Controller {
 	}
 	public function logout()
 	{
-		$data['title'] = 'Register - CollabConnect';
+		$this->session->sess_destroy();
+		$data['title'] = 'Logout - CollabConnect';
 		$data['content'] = 'auth/logout';
 		$this->load->view('templates/default', $data);
 	}

@@ -42,8 +42,7 @@
 		        <input type="text" name="email_address" class="input-block-level" placeholder="Email Address" value="<?php echo set_value('email_address'); ?>">
 		        <input type="password" name="password" class="input-block-level" placeholder="Password" value="<?php echo set_value('password'); ?>">
 		       	<input type="password" name="password_confirm" class="input-block-level" placeholder="Password Confirmation">
-		       		          						<?php echo validation_errors('<p class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>'); ?>
-
+		       	<?php echo validation_errors('<p class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>'); ?>
 		        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
 	          <span class="bottom-text">Already registered? <?php echo anchor('login', 'Sign in!'); ?></span>
 

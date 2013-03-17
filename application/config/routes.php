@@ -43,7 +43,7 @@ $route['404_override'] = '';
 
 // BEGIN AUTHENTICATION LIBRARY ROUTES
 $route['login'] = "users/login";
-$route['logout'] = "users/admin/logout";
+$route['logout'] = "users/logout";
 $route['register'] = "users/register";
 // END AUTHENTICATION LIBRARY ROUTES
 

@@ -32,11 +32,11 @@ class User extends CI_Model {
 		$query = $this->db->get_where('users', $data);
 		if($query->num_rows() > 0)
 		{
-			$data = array(
-                   'username'  => $this->input->post('name'),
+			$login = array(
+                   'username'  => $this->input->post('username'),
                    'logged_in' => TRUE
                );
-			$this->session->set_userdata($data);
+			$this->session->set_userdata($login);
 			return TRUE;
 		}
 		else
@@ -46,7 +46,15 @@ class User extends CI_Model {
 	}
 	public function logged_in()
 	{
-
+		if($this->session->userdata('username') != FALSE
+				&& $this->session->userdata('logged_in') == TRUE)
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
 }
 

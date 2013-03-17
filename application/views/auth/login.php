@@ -41,6 +41,11 @@
 	        <input type="text" name="username" class="input-block-level" placeholder="Username" value="<?php echo set_value('username'); ?>">
 	        <input type="password" name="password" class="input-block-level" placeholder="Password">
           <?php
+            if($this->session->flashdata('messages'))
+            {
+            echo '<p class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>'
+                      .$this->session->flashdata('messages').'</p>';
+            }
             echo validation_errors('<p class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>');
             if(!empty($errors))
             {
