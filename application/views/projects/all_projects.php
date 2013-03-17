@@ -4,23 +4,29 @@
 	  	<h1>Welcome to CollabConnect!</h1>
 	  	<p>We're here to help you get working on projects to build your portfolio!</p>
 	  	<p>
-	    <a class="btn btn-primary btn-large" href="index.php/about">
+	    <a class="btn btn-primary btn-large" href="about">
 	      Learn more
 	    </a>
 	  	</p>
 	</div> <!-- hero-unit end -->
 	<div class="row">
 		<div class="span12">
-			<?php
+			<?php 
+				if($this->session->flashdata('messages'))
+				{
+					echo '<p class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>'
+                      .$this->session->flashdata('messages').'</p>';
+				}
+	
 				foreach($projects as $project)
 				{
 					// print_r($project);
-					echo '<blockquote class="project well well-small" 
-							onclick="document.location=\''.base_url().'index.php/projects/view/'.$project['id'].'\'">';
+					echo '<blockquote class="well well-small projects" 
+							onclick="document.location=\''.base_url().'projects/view/'.$project['id'].'\'">';
 					echo '<p>'.$project['summary'].'</p>';
 					echo '<small>';
-						echo time_in_words($project['created_at']).' by ';
-						echo '<a href="'.base_url().'index.php/profiles/'.$project['created_by'].'">'.$project['created_by'].'</a>';
+						echo time_ago_in_words($project['created_at']).' by ';
+						echo '<a href="'.base_url().'profiles/'.$project['created_by'].'">'.$project['created_by'].'</a>';
 					echo '</small>';
 					echo '</blockquote>';
 				}

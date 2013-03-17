@@ -13,8 +13,8 @@
 	                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
 	                <ul class="dropdown-menu">
 	                  <li><a href="<?php echo base_url(); ?>"><i class="icon-user"></i> Browse Projects</a></li>
-	                  <li><a href="<?php echo base_url(); ?>index.php/projects/me"><i class="icon-time"></i> My Projects</a></li>
-	                  <li><a href="<?php echo base_url(); ?>index.php/projects/create"><i class="icon-time"></i> Create Project</a></li>
+	                  <li><a href="<?php echo base_url(); ?>projects/me"><i class="icon-time"></i> My Projects</a></li>
+	                  <li><a href="<?php echo base_url(); ?>projects/create"><i class="icon-time"></i> Create Project</a></li>
 	                </ul>
               	</li>
 		      	<li class="dropdown">
@@ -32,8 +32,8 @@
 	                </ul>
               	</li>
 
-		      	<li><a href="#">Logout</a></li>
-
+		      	<li><a href="<?php echo base_url(); ?>login">Login</a></li>
+		      	<li><a href="<?php echo base_url(); ?>register">Register</a></li>
 	    	</ul>
 	  	</div>
 	</div>

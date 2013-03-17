@@ -8,7 +8,7 @@
 				echo validation_errors('<p class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>');
 			?>
 			<?php 
-				echo form_open(base_url().'index.php/projects/create'); 
+				echo form_open(); 
 			?>
 				<fieldset>
 					<legend>Create a Project</legend>

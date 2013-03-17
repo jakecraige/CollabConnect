@@ -41,6 +41,12 @@
 $route['default_controller'] = "projects";
 $route['404_override'] = '';
 
+// BEGIN AUTHENTICATION LIBRARY ROUTES
+$route['login'] = "users/login";
+$route['logout'] = "users/admin/logout";
+$route['register'] = "users/register";
+// END AUTHENTICATION LIBRARY ROUTES
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

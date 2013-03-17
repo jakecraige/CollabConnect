@@ -1,5 +1,5 @@
 <?php
-  function time_in_words($time)
+  function time_ago_in_words($time)
   {
     $time = strtotime($time);
      $periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");

@@ -50,8 +50,10 @@ class Projects extends CI_Controller {
 	public function view($project_id)
 	{
 		$this->load->model('project');
+		$this->load->helper('date');
+		
 		$data['project'] = $this->project->get_info($project_id); //array of poject info
-		$data['title'] = 'Details - CollabConnect';
+		$data['title'] = 'View - CollabConnect';
 		$data['content'] = 'projects/view';
 		$this->load->view('templates/default', $data);
 	}

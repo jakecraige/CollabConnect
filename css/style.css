@@ -3,7 +3,7 @@
 ***************************/
 table.projects { width: 100%; }
 table th { text-align: left; }
-blockquote:hover {
+blockquote.projects:hover {
 	color: #999999;	
 	cursor: pointer;
 	border-color: white;
