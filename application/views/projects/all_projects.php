@@ -17,6 +17,11 @@
 					echo '<p class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>'
                       .$this->session->flashdata('messages').'</p>';
 				}
+				if($this->session->flashdata('delete_comment'))
+				{
+					echo '<p class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>'
+                      .$this->session->flashdata('delete_comment').'</p>';
+				}
 	
 				foreach($projects as $project)
 				{

@@ -51,6 +51,10 @@
 									<?php
 										echo time_ago_in_words($comment['created_at']).' by ';
 										echo '<a href="'.base_url().'profiles/'.$comment_username.'">'.$comment_username.'</a>';
+										if($this->session->userdata('username') == $comment_username)
+										{
+											echo ' | <a href="'.base_url().'projects/delete_comment/'.$comment['id'].'">Delete</a>';
+										}
 									?>
 								</small>
 							</div>

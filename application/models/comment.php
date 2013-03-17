@@ -20,7 +20,15 @@ class Comment extends CI_Model {
 	}
 	public function delete($comment_id)
 	{
-
+		$this->db->where('id', $comment_id);
+		if($this->db->delete('comments'))
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
 	public function get_all($project_id)
 	{

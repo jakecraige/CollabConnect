@@ -93,17 +93,28 @@ class Projects extends CI_Controller {
 
 		if($this->form_validation->run() == FALSE)
 		{
-			//$this->load->model('project');
 			//$this->session->set_flashdata('write_comment', 'Left  successfully');
 			redirect("projects/view/$project_id");
 		}
 		else
 		{
-			//Add comment, add comment added flash data. redirect to detail page
-			//$this->load->model('project');
 			$this->comment->write($project_id);
 			// $this->session->set_flashdata('new_comment', 'Comment Added!');
 			redirect("projects/view/$project_id");
+		}
+	}
+	public function delete_comment($comment_id)
+	{
+		$this->load->model('comment');
+		if($this->comment->delete($comment_id))
+		{
+			$this->session->set_flashdata('delete_comment', 'Comment Deleted!');
+			redirect('projects/');
+		}
+		else
+		{
+			$this->session->set_flashdata('delete_comment', 'Error deleting comment!');
+			redirect('projects/');
 		}
 	}
 }
