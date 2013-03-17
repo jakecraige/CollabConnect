@@ -10,7 +10,7 @@
 						<textarea class="create_details" rows="7">Inform the users on any specific details or requirements neccesary to complete the project.</textarea>
 					<label>Repository Link</label>
 					<input type="text" class="details" placeholder="http://github.com/username/RepoName">
-					<label>Languages Used</label>
+					<label>Skills Used</label>
 						<label class="checkbox inline">
 						  	<input type="checkbox" id="lang[]" value="PHP"> PHP
 						</label>
