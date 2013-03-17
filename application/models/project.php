@@ -24,6 +24,7 @@ class Project extends CI_Model {
 			'details' => $this->input->post('details'),
 			'repository' => $this->input->post('repository'),
 			'skills' => $skillset,
+			'status' => 'Open',
 			'created_by' => $this->session->userdata('username'),
 			'created_at' => $datetime,
 			'updated_at' => $datetime,
