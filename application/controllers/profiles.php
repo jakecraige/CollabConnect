@@ -5,12 +5,14 @@ class Profiles extends CI_Controller {
 	public function view($username)
 	{
 		$this->load->helper('profile');
-		
+		$this->load->model('project');
+
 		$data['user'] = $this->user->get_info($username);
 		if($data['user'] == FALSE)
 		{
 			$data['errors'] = 'User does not exist.';
 		}
+		$data['projects'] = $this->project->get_projects($this->user->get_id($username));
 		$data['title'] = 'Profile - CollabConnect';
 		$data['content'] = 'profiles/view';
 		$this->load->view('templates/default', $data);

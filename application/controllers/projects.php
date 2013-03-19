@@ -17,7 +17,8 @@ class Projects extends CI_Controller {
 		$this->load->model('project');
 		$this->load->helper('date');
 
-		$data['projects'] = $this->project->get_me();
+
+		$data['projects'] = $this->project->get_projects($this->session->userdata('user_id'));
 		$data['title'] = 'My Projects - CollabConnect';
 		$data['content'] = 'projects/my_projects';
 		$this->load->view('templates/default', $data);
@@ -45,8 +46,6 @@ class Projects extends CI_Controller {
 			else
 			{
 				$data['id'] = $this->project->create();
-				$project_id = $this->db->insert_id();
-				$this->project->join($project_id);
 				$data['title'] = 'Success! - CollabConnect';
 				$data['errors'] = '';
 				$data['content'] = 'projects/created_success';

@@ -1,4 +1,7 @@
-<?php $user = $user[0]; ?>
+<?php 
+	$user = $user[0]; 
+	//$projects = $projects[0];
+?>
 <div class="container">
 	<div class="row">
 		<div class="span9">
@@ -6,11 +9,27 @@
 				<p class="alert alert-error"><?= $errors ?></p>
 			<?php endif; ?>
 			<h4>About Me!</h4>
-			<p>
-				<?= $user['about'] ?>
-			</p>
+			<?php if(!empty($user['about'])): ?>
+				<p><?= nl2br($user['about']) ?></p>
+			<?php else: ?>
+				<p>User has not updated this section yet.</p>
+			<?php endif; ?>
 			<hr>
 			<h4>Current Projects</h4>
+			<?php
+			foreach($projects as $project)
+			{
+				// print_r($project);
+				echo '<blockquote class="well well-small projects" 
+						onclick="document.location=\''.base_url().'projects/view/'.$project['id'].'\'">';
+				echo '<p>'.$project['summary'].'</p>';
+				echo '<small>';
+					echo time_ago_in_words($project['created_at']).' by ';
+					echo '<a href="'.base_url().'profiles/'.$project['created_by'].'">'.$project['created_by'].'</a>';
+				echo '</small>';
+				echo '</blockquote>';
+			}
+			?>
 		</div>
 		<div class="span3">
 			<div class="well well-small">
@@ -30,8 +49,10 @@
 			<div class="well well-small">
 				<h4>Contact</h4>
 				<p><a href="#">Send Message</a></p>
-				<h4>Website</h4>
-				<p><a href="<?= $user['website'] ?>"><?= $user['website'] ?></a></p>
+				<?php if(!empty($user['website'])): ?>
+					<h4>Website</h4>
+					<p><a href="<?= $user['website'] ?>"><?= $user['website'] ?></a></p>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

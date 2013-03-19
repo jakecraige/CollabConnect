@@ -32,10 +32,8 @@ class Project extends CI_Model {
 		$query = $this->db->get('projects');
 		return $query->result_array();
 	}
-	public function get_me()
+	public function get_projects($user_id)
 	{
-		$user_id = $this->session->userdata('user_id');
-
 		$query = $this->db->query("SELECT *
 					FROM users, project_members
 					WHERE users.id = project_members.user_id");
