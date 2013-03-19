@@ -22,4 +22,8 @@
 
      return "$difference $periods[$j] ago";
   }
+  function current_datetime()
+  {
+    return date('Y-m-d H:i:s');
+  }
 ?>

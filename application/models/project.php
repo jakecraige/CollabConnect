@@ -7,30 +7,24 @@ class Project extends CI_Model {
 */
 	public function create()
 	{
-		$datetime = date('Y-m-d H:i:s');
-		$skillset = '';
-		$skills = $this->input->post('skills');
-		if(!empty($skills))
-		{
-			foreach($skills as $skill)
-			{
-				$skillset .= " $skill";
-			}
-			$skillset = trim($skillset); //Get rid of initial space when creating list
-		}
+		$this->load->helper(array('profile', 'date'));
 
 		$data = array(
 			'summary' => $this->input->post('summary'),
 			'details' => $this->input->post('details'),
 			'repository' => $this->input->post('repository'),
-			'skills' => $skillset,
+			'skills' => skills_to_list($this->input->post('skills')),
 			'status' => 'Open',
 			'created_by' => $this->session->userdata('username'),
-			'created_at' => $datetime,
-			'updated_at' => $datetime,
+			'created_at' => current_datetime(),
+			'updated_at' => current_datetime(),
 		);
 		$this->db->insert('projects', $data);
-		return $this->db->insert_id();
+
+		//get project id so we can show a link to redirect user back to project
+		$project_id = $this->db->insert_id();
+
+		return $project_id;
 	}
 	public function get_info($project_id)
 	{

@@ -29,7 +29,7 @@
 		                  <li><a href="<?= base_url().'profiles/'.$this->session->userdata('username') ?>">
 		                  	<i class="icon-user"></i> View profile</a>
 		                  </li>
-		                  <li><a href="#"><i class="icon-time"></i> Edit profile</a></li>
+		                  <li><a href="<?= base_url() ?>profiles/edit"><i class="icon-time"></i> Edit profile</a></li>
 		                </ul>
 	              	</li>
 	              	<li class="dropdown">

@@ -41,6 +41,7 @@
 $route['default_controller'] = 'projects';
 $route['404_override'] = '';
 
+$route['profiles/edit'] = 'profiles/edit';
 $route['profiles/(:any)'] = 'profiles/view/$1';
 $route['profiles'] = 'projects';
 

@@ -106,6 +106,24 @@ class User extends CI_Model {
 			return FALSE;
 		}
 	}
+	public function update()
+	{
+		$this->load->helper('profile');
+		$data = array(
+			'about' => $this->input->post('about'),
+			'website' => $this->input->post('website'),
+			'skills' => skills_to_list($this->input->post('skills'))
+		);
+		$this->db->where('username', $this->session->userdata('username'));
+		if($this->db->update('users', $data))
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
 }
 
 /* End of file user.php */

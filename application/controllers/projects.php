@@ -32,7 +32,7 @@ class Projects extends CI_Controller {
 			//Form validation rules
 			$this->form_validation->set_rules('summary', 'Summary', 'trim|required|min_length[10]|is_unique[projects.summary]');
 			$this->form_validation->set_rules('details', 'Details', 'trim|required|is_unique[projects.repository]');
-			$this->form_validation->set_rules('repository', 'Repository', 'trim|min_length[5]|prep_url');
+			$this->form_validation->set_rules('repository', 'Repository', 'trim|min_length[10]|prep_url');
 
 
 			if($this->form_validation->run() == FALSE)
