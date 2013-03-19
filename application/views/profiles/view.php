@@ -1,6 +1,5 @@
 <?php 
 	$user = $user[0]; 
-	//$projects = $projects[0];
 ?>
 <div class="container">
 	<div class="row">
@@ -20,7 +19,7 @@
 			foreach($projects as $project)
 			{
 				// print_r($project);
-				echo '<blockquote class="well well-small projects" 
+				echo '<blockquote class="projects" 
 						onclick="document.location=\''.base_url().'projects/view/'.$project['id'].'\'">';
 				echo '<p>'.$project['summary'].'</p>';
 				echo '<small>';
@@ -40,11 +39,7 @@
 			</div>
 			<div class="well well-small">
 				<h4>Skills</h4>
-				<ol>
-					<li>PHP</li>
-					<li>MySQL</li>
-					<li>HTML</li>
-				</ol>
+				<?php display_skills($user['skills']); ?>
 			</div>
 			<div class="well well-small">
 				<h4>Contact</h4>

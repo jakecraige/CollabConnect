@@ -16,4 +16,22 @@
 		}
 		return $skillset;
 	}
+
+	function display_skills($skills)
+	{
+		if(!empty($skills))
+		{
+			$skills = explode(' ', $skills);
+			echo '<ol>';
+			foreach($skills as $skill)
+			{
+				echo "<li>$skill</li>";
+			}
+			echo '</ol>';
+		}
+		else
+		{
+			echo '<p>No skills selected.</p>';
+		}
+	}
 ?>

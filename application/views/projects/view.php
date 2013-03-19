@@ -89,20 +89,7 @@
 			<?php endif; ?>
 			<h4>Skills Needed</h4>
 			<?php
-				if(!empty($project['skills']))
-				{
-					$skills = explode(' ', $project['skills']);
-					echo '<ol>';
-					foreach($skills as $skill)
-					{
-						echo "<li>$skill</li>";
-					}
-					echo '</ol>';
-				}
-				else
-				{
-					echo '<p>No skills required.</p>';
-				}
+				display_skills($project['skills']);
 			?>
 			<h4>Team Members</h4>
 			<p>
