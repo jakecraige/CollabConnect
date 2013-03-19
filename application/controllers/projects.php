@@ -14,6 +14,10 @@ class Projects extends CI_Controller {
 	}
 	public function me()
 	{
+		$this->load->model('project');
+		$this->load->helper('date');
+
+		$data['projects'] = $this->project->get_me();
 		$data['title'] = 'My Projects - CollabConnect';
 		$data['content'] = 'projects/my_projects';
 		$this->load->view('templates/default', $data);
@@ -64,7 +68,7 @@ class Projects extends CI_Controller {
 		$this->load->helper('profile'); //for gravar img in comment
 
 		$data['username'] = $this->session->userdata('username');
-		$data['user_email_address'] = $this->user->get_email_address($data['username']);	
+		$data['user_email_address'] = $this->session->userdata('email_address');
 		$data['comments'] = $this->comment->get_all($project_id);
 		$data['project'] = $this->project->get_info($project_id); //array of poject info
 

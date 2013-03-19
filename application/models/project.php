@@ -38,6 +38,33 @@ class Project extends CI_Model {
 		$query = $this->db->get('projects');
 		return $query->result_array();
 	}
+	public function get_me()
+	{
+		$user_id = $this->session->userdata('user_id');
+
+		$query = $this->db->query("SELECT *
+					FROM users, project_members
+					WHERE users.id = project_members.user_id");
+		$projects = array();
+		foreach($query->result() as $row)
+		{
+			if($row->user_id == $user_id)
+			{
+				$projects[] = $row->project_id;
+			}
+		}
+
+		$this->db->where('status <>', 'Closed');
+		$this->db->where('id', $projects[0]); //Done to always have the first AND query
+		foreach ($projects as $project)
+		{
+			$this->db->or_where('id', $project);
+		}
+		$this->db->order_by('created_at', 'desc');
+
+		$query = $this->db->get('projects');
+		return $query->result_array();
+	}
 	public function get_all()
 	{
 		$this->db->where('status <>', 'Closed');

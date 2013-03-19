@@ -1,53 +1,32 @@
 <div class="container">
 	<div class="row">
 		<div class="span12">
-			<blockquote class="project well well-small" onclick="document.location='http://www.google.com'">
-				<p>
-					Collaboration portal where users can go and find other developers
-					to collaborate with.
-				</p>
-				<small>
-					6 hours ago by <a href="<?php echo base_url(); ?>profiles/jCraige">jCraige</a>
-				</small>
-			</blockquote>
-			<blockquote class="project well well-small">
-				<p>
-					Basic streaming music site where users can register and upload their
-					favorite songs to share them
-				</p>
-				<small>
-					8 hours ago by <a href="<?php echo base_url(); ?>profiles/bob.loren">bob.loren</a>
-				</small>
-			</blockquote>
-			<blockquote class="project well well-small">
-				<p>
-					Simple social network with profile pages, messages, and an 
-					auththentication system
-				</p>
-				<small>
-					2 days ago by <a href="<?php echo base_url(); ?>profiles/WannaBeACoder">WannaBeACoder</a>
-				</small>
-			</blockquote>
-			<blockquote class="project well well-small">
-				<p>
-					Basic streaming music site where users can register and upload their
-					favorite songs to share them
-				</p>
-				<small>
-					8 hours ago by <a href="<?php echo base_url(); ?>profiles/bob.loren">bob.loren</a>
-				</small>
-			</blockquote>
-			<blockquote class="project well well-small">
-				<p>
-					Simple social network with profile pages, messages, and an 
-					auththentication system
-				</p>
-				<small>
-					2 days ago by <a href="<?php echo base_url(); ?>profiles/WannaBeACoder">WannaBeACoder</a>
-				</small>
-			</blockquote>
-
-			<div class="pagination">
+			<?php 
+				if($this->session->flashdata('messages'))
+				{
+					echo '<p class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>'
+                      .$this->session->flashdata('messages').'</p>';
+				}
+				if($this->session->flashdata('delete_comment'))
+				{
+					echo '<p class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>'
+                      .$this->session->flashdata('delete_comment').'</p>';
+				}
+	
+				foreach($projects as $project)
+				{
+					// print_r($project);
+					echo '<blockquote class="well well-small projects" 
+							onclick="document.location=\''.base_url().'projects/view/'.$project['id'].'\'">';
+					echo '<p>'.$project['summary'].'</p>';
+					echo '<small>';
+						echo time_ago_in_words($project['created_at']).' by ';
+						echo '<a href="'.base_url().'profiles/'.$project['created_by'].'">'.$project['created_by'].'</a>';
+					echo '</small>';
+					echo '</blockquote>';
+				}
+			?>
+			<!-- <div class="pagination">
 			  <ul>
 			    <li class="disabled"><a href="#">&laquo;</a></li>
 			    <li class="active"><a href="#">1</a></li>
@@ -55,7 +34,7 @@
 			    <li><a href="#">3</a></li>
 			    <li><a href="#">&raquo;</a></li>
 			  </ul>
-			</div>
+			</div> -->
 		</div><!-- end span8 -->
 		<!-- <div class="span3 sidebar">
 			<div class="well">

@@ -74,14 +74,17 @@ class User extends CI_Model {
 	{
 		$data = array(
 			'username' => trim($this->input->post('username')),
-			'password' => trim(md5($this->input->post('password'))),
+			'password' => trim(md5($this->input->post('password')))
 		);
 		$query = $this->db->get_where('users', $data);
 		if($query->num_rows() > 0)
 		{
+			$username = trim($this->input->post('username'));
 			$login = array(
-                   'username'  => $this->input->post('username'),
-                   'logged_in' => TRUE
+                   'username'  => $username,
+                   'logged_in' => TRUE,
+                   'user_id' => $this->user->get_id($username),
+                   'email_address' => $this->user->get_email_address($username)
                );
 			$this->session->set_userdata($login);
 			return TRUE;
