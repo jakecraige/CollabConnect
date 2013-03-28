@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"projec",
+				"project_id"
+			],
+			[
+				"project",
+				"project"
+			],
+			[
+				"projects",
+				"projects"
+			],
+			[
+				"db_ins",
+				"db_insert	CI - Active Record DB Insert"
+			],
+			[
+				"TEXT",
+				"TEXT"
+			],
+			[
 				"db_inse",
 				"db_insert_id	CI - Active Record DB Last Inserted Id"
 			],
@@ -75,49 +95,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "application/views/projects/all_projects.php",
-			"settings":
-			{
-				"buffer_size": 1795,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/models/project.php",
-			"settings":
-			{
-				"buffer_size": 2711,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/core/MY_Controller.php",
-			"settings":
-			{
-				"buffer_size": 3603,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/helpers/MY_date_helper.php",
-			"settings":
-			{
-				"buffer_size": 607,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');\n\nclass Migration_Add_project_members_table extends CI_Migration {\n\n	public function __construct()\n	{\n		$this->load->dbforge();\n		$this->load->database();\n	}\n\n	public function up() {\n		$this->dbforge->add_field('comment_id');\n		$this->dbforge->add_key('comment_id');\n	    $this->dbforge->add_field(array(\n	        'project_id' => array(\n	          'type' => 'INT',\n	          'null' => FALSE,\n	        ),\n	        'user_id' => array( \n	          'type' => 'INT',\n	          'null' => FALSE,\n	        ),\n	    ));\n	    $this->dbforge->create_table('project_members');\n	}\n\n	public function down() {\n		$this->dbforge->drop_table('project_members');	\n	}\n\n}\n\n/* End of file 003_add_project_members_table */\n/* Location: ./application/migrations/003_add_project_members_table */",
-			"file": "application/migrations/004_add_comments_table.php",
-			"file_size": 0,
-			"file_write_time": 130080072285829499,
-			"settings":
-			{
-				"buffer_size": 845,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -167,40 +144,50 @@
 	},
 	"file_history":
 	[
-		"/C/wamp/www/collabconnect/application/migrations/003_add_project_members_table.php",
-		"/C/wamp/www/collabconnect/application/config/migration.php",
-		"/C/wamp/www/collabconnect/application/controllers/migrate.php",
 		"/C/wamp/www/collabconnect/application/controllers/projects.php",
+		"/C/Rails/demo_app/Gemfile",
+		"/C/wamp/www/collabconnect/application/views/projects/update_success.php",
+		"/C/wamp/www/collabconnect/application/views/projects/update.php",
 		"/C/wamp/www/collabconnect/application/models/project.php",
+		"/C/wamp/www/collabconnect/application/views/projects/view.php",
+		"/C/wamp/www/collabconnect/application/config/autoload.php",
+		"/C/wamp/www/collabconnect/application/views/projects/created_success.php",
+		"/C/wamp/www/collabconnect/application/models/user.php",
+		"/C/wamp/www/collabconnect/application/views/projects/create_project.php",
+		"/C/wamp/www/collabconnect/application/helpers/profile_helper.php",
+		"/C/wamp/www/collabconnect/application/todo.txt",
+		"/C/wamp/www/collabconnect/application/views/profiles/view.php",
+		"/C/wamp/www/collabconnect/css/style.css",
+		"/C/wamp/www/collabconnect/application/controllers/profiles.php",
+		"/C/wamp/www/collabconnect/application/views/profiles/edit.php",
+		"/C/wamp/www/collabconnect/application/views/projects/current_projects.php",
+		"/C/wamp/www/collabconnect/application/views/projects/my_projects.php",
 		"/C/wamp/www/collabconnect/application/views/templates/header.php",
 		"/C/wamp/www/collabconnect/application/helpers/MY_date_helper.php",
-		"/C/wamp/www/collabconnect/css/style.css",
+		"/C/wamp/www/collabconnect/application/config/routes.php",
+		"/C/wamp/www/collabconnect/application/migrations/004_add_comments_table.php",
+		"/C/wamp/www/collabconnect/application/models/comment.php",
 		"/C/wamp/www/collabconnect/application/views/projects/all_projects.php",
-		"/C/wamp/www/collabconnect/application/models/user.php",
-		"/C/wamp/www/collabconnect/application/views/projects/view.php",
+		"/C/wamp/www/collabconnect/application/migrations/003_add_project_members_table.php",
+		"/C/wamp/www/collabconnect/application/core/MY_Controller.php",
+		"/C/wamp/www/collabconnect/application/config/migration.php",
+		"/C/wamp/www/collabconnect/application/controllers/migrate.php",
 		"/C/wamp/www/collabconnect/application/views/auth/login.php",
 		"/C/wamp/www/collabconnect/application/migrations/002_add_users_table.php",
 		"/C/wamp/www/collabconnect/application/config/config.php",
 		"/C/wamp/www/collabconnect/application/views/auth/logout.php",
-		"/C/wamp/www/collabconnect/application/views/profiles/view.php",
-		"/C/wamp/www/collabconnect/application/controllers/profiles.php",
-		"/C/wamp/www/collabconnect/application/config/routes.php",
 		"/C/wamp/www/collabconnect/application/controllers/test.php",
 		"/C/wamp/www/collabconnect/application/controllers/users.php",
-		"/C/wamp/www/collabconnect/application/config/autoload.php",
 		"/C/wamp/www/collabconnect/application/views/auth/register.php",
 		"/C/wamp/www/collabconnect/README.md",
 		"/C/wamp/www/collabconnect/application/views/auth/registration_success.php",
-		"/C/wamp/www/collabconnect/application/views/projects/create_project.php",
 		"/C/wamp/www/collabconnect/application/migrations/001_add_projects_table.php",
 		"/C/wamp/www/collabconnect/.htaccess",
-		"/C/wamp/www/collabconnect/application/views/projects/created_success.php",
 		"/C/wamp/www/collabconnect/application/views/auth/pages/register.php",
 		"/C/wamp/www/collabconnect/application/config/ag_auth.php",
 		"/C/Users/Owner/Downloads/ag-auth-master/ag-auth-master/config/routes.php",
 		"/C/wamp/www/collabconnect/application/views/projects/created_success.ph",
 		"/C/wamp/www/ci/application/controllers/sites.php",
-		"/C/wamp/www/collabconnect/application/views/projects/my_projects.php",
 		"/C/wamp/www/collabconnect/application/controllers/about.php",
 		"/C/wamp/www/collabconnect/application/config/database.php",
 		"/C/wamp/www/collabconnect/system/language/english/unit_test_lang.php",
@@ -270,6 +257,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"trim($this->input->post('username'))",
+			"}\n",
+			"project_members",
 			"();",
 			"index.php",
 			"id",
@@ -301,158 +291,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "application/views/projects/all_projects.php",
-					"settings":
-					{
-						"buffer_size": 1795,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								955,
-								955
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "application/models/project.php",
-					"settings":
-					{
-						"buffer_size": 2711,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								272,
-								272
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "application/core/MY_Controller.php",
-					"settings":
-					{
-						"buffer_size": 3603,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "application/helpers/MY_date_helper.php",
-					"settings":
-					{
-						"buffer_size": 607,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								601,
-								50
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "application/migrations/004_add_comments_table.php",
-					"settings":
-					{
-						"buffer_size": 845,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								700,
-								715
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -502,20 +342,36 @@
 		"selected_items":
 		[
 			[
-				"my",
-				"application/helpers/MY_date_helper.php"
+				"profile_he",
+				"application/helpers/profile_helper.php"
 			],
 			[
-				"all_",
-				"application/views/projects/all_projects.php"
+				"profiles/ve",
+				"application/views/profiles/view.php"
 			],
 			[
 				"sty",
 				"css/style.css"
 			],
 			[
+				"head",
+				"application/views/templates/header.php"
+			],
+			[
 				"user",
 				"application/models/user.php"
+			],
+			[
+				"st",
+				"css/style.css"
+			],
+			[
+				"my",
+				"application/helpers/MY_date_helper.php"
+			],
+			[
+				"all_",
+				"application/views/projects/all_projects.php"
 			],
 			[
 				"projects",
@@ -548,10 +404,6 @@
 			[
 				"site",
 				"sites.php"
-			],
-			[
-				"head",
-				"includes/header.php"
 			],
 			[
 				"sign",

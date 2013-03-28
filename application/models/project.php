@@ -26,6 +26,16 @@ class Project extends CI_Model {
 
 		return $project_id;
 	}
+	public function created_by($project_id)
+	{
+		$this->db->where('id', $project_id);
+		$query = $this->db->get('projects');
+		foreach($query->result() as $row)
+		{
+			return $row->created_by;
+		}
+		return FALSE;
+	}
 	public function get_info($project_id)
 	{
 		$this->db->where('id', $project_id);
@@ -115,6 +125,25 @@ class Project extends CI_Model {
 		if(!empty($users))
 		{
 			return $users;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
+	public function update($project_id)
+	{
+		$data = array(
+			'summary' => $this->input->post('summary'),
+			'details' => $this->input->post('details'),
+			'repository' => $this->input->post('repository'),
+			'skills' => skills_to_list($this->input->post('skills')),
+			'updated_at' => current_datetime()
+		);
+		$this->db->where('id', $project_id);
+		if($this->db->update('projects', $data))
+		{
+			return $project_id;
 		}
 		else
 		{

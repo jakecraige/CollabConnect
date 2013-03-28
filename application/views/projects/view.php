@@ -78,7 +78,7 @@
 			<?php if($this->user->logged_in()): ?>
 				<?php if($project['created_by'] == $this->session->userdata('username')): ?>
 					<button class="btn btn-danger">Mark Completed</button>
-					<button class="btn btn-primary">Edit</button>
+					<a href="<?= base_url().'projects/edit/'.$project['id'] ?>" class="btn btn-primary">Edit</a>
 				<?php else: ?>
 					<?php if($this->project->is_member($project['id'])): ?>
 						<a class="btn btn-danger" href="<?php echo base_url().'projects/leave/'.$project['id']; ?>">Leave Project</a>

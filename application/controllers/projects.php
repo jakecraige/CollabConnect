@@ -120,6 +120,47 @@ class Projects extends CI_Controller {
 			redirect('projects/');
 		}
 	}
+	public function edit($project_id)
+	{
+		$this->load->model('project');
+		if($this->user->logged_in() && $this->session->userdata('username') == $this->project->created_by($project_id))
+		{
+			echo 'INSIDE OF IF LOOP';
+			$this->load->library('form_validation');
+
+			//Form validation rules
+			$this->form_validation->set_rules('summary', 'Summary', 'trim|required|min_length[10]|is_unique[projects.summary]');
+			$this->form_validation->set_rules('details', 'Details', 'trim|required|is_unique[projects.repository]');
+			$this->form_validation->set_rules('repository', 'Repository', 'trim|min_length[10]|prep_url');
+
+
+			if($this->form_validation->run() == FALSE)
+			{
+				$data['title'] = 'Update Project - CollabConnect';
+				$data['project'] = $this->project->get_info($project_id);
+				$data['errors'] = '';
+				$data['content'] = 'projects/update';
+				$this->load->view('templates/default', $data);
+			}
+			else
+			{
+				$id = $this->project->update($project_id);
+				if($id !== FALSE) //Meaning update worked.
+				{
+					$data['id'] = $id;
+				}
+				$data['title'] = 'Success! - CollabConnect';
+				$data['errors'] = '';
+				$data['content'] = 'projects/update_success';
+				$this->load->view('templates/default', $data);
+			}
+		}
+		else
+		{
+			$this->session->set_flashdata('messages', 'You must login or be the creator to edit project.');
+			redirect('login');
+		}
+	}
 }
 
 /* End of file projects.php */

@@ -1,6 +1,7 @@
-Edit User Profiles so more info can display
+
+
+Correctly have skills checkboxes populated on edit pages for project and profile
 Add messaging features
 Add forgot your password
-Make my projects work
 ALlow closing of projects
 history of projects
